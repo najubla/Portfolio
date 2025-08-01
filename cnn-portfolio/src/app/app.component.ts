@@ -16,7 +16,7 @@ import { NgIf, NgFor } from '@angular/common';
         <div class="navbar-right">
           <a href="#">Blog</a>
           <a href="#">GitHub</a>
-          <a href="#">CV</a>
+          <a href="#">CVs</a>
         </div>
       </nav>
       <h1>CNN Projects</h1>
