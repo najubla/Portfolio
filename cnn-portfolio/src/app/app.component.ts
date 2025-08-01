@@ -9,8 +9,19 @@ import { NgIf, NgFor } from '@angular/common';
   imports: [NgIf, NgFor, ProjectCardComponent],
   template: `
     <main class="container">
-      <h1>Juan's CNN Portfolio</h1>
-      <p class="subtitle">Deep Learning / Computer Vision</p>
+      <nav class="navbar">
+        <div class="navbar-left">
+          <span class="logo">Juan Ramírez</span>
+        </div>
+        <div class="navbar-right">
+          <a href="#">Blog</a>
+          <a href="#">GitHub</a>
+          <a href="#">CV</a>
+        </div>
+      </nav>
+      <h1>CNN Projects</h1>
+      <p class="subtitle">My public portfolio includes deep learning projects focused on Convolutional Neural Networks (CNNs) applied to computer vision tasks.
+To explore more, visit my GitHub, check the About page, or download my CV.</p>
 
       <section *ngIf="projects.length > 0; else empty">
         <app-project-card *ngFor="let p of projects" [project]="p" />
