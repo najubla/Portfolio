@@ -19,7 +19,7 @@ import { NgIf, NgFor } from '@angular/common';
           <a href="#">CV</a>
         </div>
       </nav>
-      <h1>CNN Projects</h1>
+      <h1>Projects</h1>
       <p class="subtitle">My public portfolio includes deep learning projects focused on Convolutional Neural Networks (CNNs) applied to computer vision tasks.
 To explore more, visit my GitHub, check the About page, or download my CV.</p>
 
