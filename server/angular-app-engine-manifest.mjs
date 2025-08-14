@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://najubla.github.io/Portfolio',
+  basePath: '/Portfolio',
   supportedLocales: {
   "en-US": ""
 },
