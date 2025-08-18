@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+/* Reset básico y tema global */
+html, body { height: 100%; }
+body {
+  margin: 0; /* <- elimina los "bordes blancos" laterales del body */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+/* Tema claro por defecto */
+:root {
+  --bg: #f6f7fb;        /* fondo claro */
+  --panel: #ffffff;     /* tarjetas/paneles */
+  --panel-2: #f2f4f8;   /* bloques sutiles */
+  --text: #0e1116;
+  --muted: #5f6b7a;
+  --border: #e3e7ef;
+  --accent: #6b4eff;    /* acento violeta/azul */
+}
+
+/* Tema oscuro */
+:root[data-theme="dark"] {
+  --bg: #12161f;
+  --panel: #151b24;
+  --panel-2: #111822;
+  --text: #e8ecf4;
+  --muted: #a2adbd;
+  --border: #273141;
+  --accent: #7c3aed;
+}
