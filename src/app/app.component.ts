@@ -11,6 +11,7 @@ type Project = { section: string; title: string; desc: string; tags: string[]; l
   template: `
     <header class="site-header">
       <div class="container nav">
+        <a></a>
         <button class="theme-btn" (click)="toggleTheme()" [attr.aria-label]="'Switch to ' + (theme==='light' ? 'dark' : 'light') + ' theme'">
           <span *ngIf="theme==='light'">Dark</span>
           <span *ngIf="theme==='dark'">Light</span>
@@ -39,16 +40,27 @@ type Project = { section: string; title: string; desc: string; tags: string[]; l
       <!-- SECCIONES + PROYECTOS -->
       <section class="section" *ngFor="let s of sections" [attr.id]="s.id">
         <h2>{{ s.label }}</h2>
-        <div class="grid">
-          <article class="card" *ngFor="let p of getBySection(s.id)">
-            <h3>{{ p.title }}</h3>
-            <p class="muted">{{ p.desc }}</p>
-            <div class="tags">
-              <span class="tag" *ngFor="let t of p.tags">{{ t }}</span>
-            </div>
-            <a class="more" [href]="p.link" target="_blank" rel="noopener">Repository →</a>
-          </article>
-        </div>
+
+        <ng-container *ngIf="getBySection(s.id).length > 0; else emptySection">
+          <div class="grid">
+            <article class="card" *ngFor="let p of getBySection(s.id)">
+              <h3>{{ p.title }}</h3>
+              <p class="muted">{{ p.desc }}</p>
+              <div class="tags">
+                <span class="tag" *ngFor="let t of p.tags">{{ t }}</span>
+              </div>
+              <a class="more" [href]="p.link" target="_blank" rel="noopener">Repository →</a>
+            </article>
+          </div>
+        </ng-container>
+
+        <ng-template #emptySection>
+          <div class="empty card" role="status" aria-live="polite">
+            <div class="empty-icon" aria-hidden="true">🧪</div>
+            <h3>Coming soon</h3>
+            <p class="muted">This section is being updated.</p>
+          </div>
+        </ng-template>
       </section>
     </main>
   `,
@@ -65,7 +77,8 @@ export class AppComponent implements OnInit {
     { id: 'classic', label: 'Classical ML' }
   ];
 
-  projects: Project[] = [];
+  projects: Project[] = [
+    ];
 
   ngOnInit() {
     const saved = localStorage.getItem('theme');
