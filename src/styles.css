@@ -2,7 +2,7 @@
 /* Reset básico y tema global */
 html, body { height: 100%; }
 body {
-  margin: 0; /* <- elimina los "bordes blancos" laterales del body */
+  margin: 0; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--bg);
@@ -10,18 +10,17 @@ body {
   font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 }
 
-/* Tema claro por defecto */
 :root {
-  --bg: #f6f7fb;        /* fondo claro */
-  --panel: #ffffff;     /* tarjetas/paneles */
-  --panel-2: #f2f4f8;   /* bloques sutiles */
+  --bg: #f6f7fb;       
+  --panel: #ffffff;    
+  --panel-2: #f2f4f8;   
   --text: #0e1116;
   --muted: #5f6b7a;
   --border: #e3e7ef;
-  --accent: #6b4eff;    /* acento violeta/azul */
+  --accent: #6b4eff;    
 }
 
-/* Tema oscuro */
+
 :root[data-theme="dark"] {
   --bg: #12161f;
   --panel: #151b24;
