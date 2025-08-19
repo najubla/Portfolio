@@ -28,7 +28,7 @@ type Project = { section: string; title: string; desc: string; tags: string[]; l
         </p>
       </section>
 
-      <!-- BARRA DE SECCIONES -->
+      
       <nav class="sections-bar" aria-label="Sections">
         <ul class="sections">
           <li *ngFor="let s of sections">
@@ -37,7 +37,7 @@ type Project = { section: string; title: string; desc: string; tags: string[]; l
         </ul>
       </nav>
 
-      <!-- SECCIONES + PROYECTOS -->
+      
       <section class="section" *ngFor="let s of sections" [attr.id]="s.id">
         <h2>{{ s.label }}</h2>
 
@@ -56,7 +56,6 @@ type Project = { section: string; title: string; desc: string; tags: string[]; l
 
         <ng-template #emptySection>
           <div class="empty card" role="status" aria-live="polite">
-            <div class="empty-icon" aria-hidden="true">🧪</div>
             <h3>Coming soon</h3>
             <p class="muted">This section is being updated.</p>
           </div>
